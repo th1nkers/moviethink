@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/moviethink/static/css/main.be3b9348.css",
+    "main.js": "/moviethink/static/js/main.f27a4664.js",
+    "index.html": "/moviethink/index.html",
+    "main.be3b9348.css.map": "/moviethink/static/css/main.be3b9348.css.map",
+    "main.f27a4664.js.map": "/moviethink/static/js/main.f27a4664.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be3b9348.css",
+    "static/js/main.f27a4664.js"
+  ]
+}

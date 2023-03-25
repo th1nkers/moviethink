@@ -13,7 +13,7 @@ function App() {
     setIsLoading(true)
     setError(null)
     try {
-      const response = await fetch('https://swapi.dev/api/films/')
+      const response = await fetch('https://react-http-7a8de-default-rtdb.firebaseio.com/movies.json')
 
       if (!response.ok && response.status === 404) {
         throw new Error('Something went wrong!')
@@ -60,8 +60,25 @@ function App() {
 
   /////////////////////////////////////
 
-  function addMovieHandler(movie) {
-    console.log(movie);
+  async function addMovieHandler(movie) {
+    try {
+      const response = await fetch('https://react-http-7a8de-default-rtdb.firebaseio.com/movies.json', {
+        method: 'POST',
+        body: JSON.stringify(movie),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+
+      if (!response.ok && response.status === 404) {
+        throw new Error('Something went wrong!')
+      }
+
+      const data = await response.json();
+      console.log(data)
+    } catch (error) {
+      setError(error.message)
+    }
   }
 
   /////////////////////////////////////
